@@ -134,3 +134,14 @@ exit 1
 fi""")
 	}
 }
+buildPipelineView('Task 6') {
+    filterBuildQueue()
+    filterExecutors()
+    title('Project 6 Complete View')
+    displayedBuilds(5)
+    selectedJob('Job1')
+    alwaysAllowManualTrigger()
+    showPipelineParameters()
+    refreshFrequency(60)
+}
+
