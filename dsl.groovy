@@ -120,11 +120,9 @@ fi""")
 
 job("Job2") {
 	description()
-	keepDependencies(false)
-	disabled(false)
-	concurrentBuild(false)
+	
 	triggers {
-	        scm('@daily')
+	        
 	        upstream {
 	            upstreamProjects('Job1')
 	            threshold('SUCCESS')
