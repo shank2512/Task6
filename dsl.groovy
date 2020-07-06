@@ -123,6 +123,13 @@ job("Job2") {
 	keepDependencies(false)
 	disabled(false)
 	concurrentBuild(false)
+	triggers {
+	        scm('@daily')
+	        upstream {
+	            upstreamProjects('Job1')
+	            threshold('SUCCESS')
+	        }
+	    }
 	steps {
 		shell("""status=\$(curl -sL -w "%{http_code}" -I "http://192.168.99.105:30007" -o /dev/null)
 
