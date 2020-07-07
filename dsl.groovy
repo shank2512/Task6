@@ -138,6 +138,9 @@ else
 exit 1
 fi""")
 	}
+	publishers {
+		mailer("shashankjoshi368@gmail.com", false, false)
+	}
 }
 buildPipelineView('Task 6') {
     filterBuildQueue()
